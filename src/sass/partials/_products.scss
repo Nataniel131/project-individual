@@ -1,0 +1,35 @@
+.products-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 50px auto 100px;
+  width: 70%;
+  height: 750px;
+}
+
+.products-box {
+  flex: 40%;
+  margin: 20px;
+}
+
+.image-box {
+  content: "";
+  background-size: cover;
+  background-position: center;
+}
+
+.first-product {
+  background-image: url('../images/background.png');
+}
+
+.second-product {
+  background-image: url('../images/background.png');
+}
+
+.third-product {
+  background-image: url('../images/background.png');
+}
+
+.tekst-box {
+  color: $color-gold;
+}

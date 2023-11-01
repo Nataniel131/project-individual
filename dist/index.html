@@ -16,11 +16,11 @@
               <p>EL TIGRE</p>
               <p>VENEZUELA COFFEE BEANS</p>
             </div>
-            <div class="navigation-button">
+            <div class="navigation-pages">
               <ul>
-                <li><a>HOME</a></li>
-                <li><a>PRODUCTS</a></li>
-                <li><a>CONTACT</a></li>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#products">PRODUCTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
               </ul>
             </div>
           </div>
@@ -38,10 +38,7 @@
       </div>
     </header>
 
-    <div id="pages">
-      <section id="home">
-        <div class="home-page container"></div>
-      </section>
+    <div id="pages" class="pages-wrapper">
       <section id="products">
         <div class="products-page container">
           <h2 class="section-title">PRODUCTS</h2>
@@ -49,10 +46,53 @@
           <div class="products-list"></div>
         </div>
       </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="about-wrapper">
+            <h2 class="section-title">ABOUT US</h2>
+            <div class="line">
+            </div>
+            <div class="about-tekst">
+              <p>
+                Who are we? Just a bunch of friends with<br>a love for a good coffee and desire to create something new, something original<br> <br>Our coffees reflect us - young, wild and free.<br>We are on the journey of new tastes...
+              </p>
+            </div>
+            <div class="about-join">
+              <p>Join us!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact">
-        <div class="contact-page container"></div>
+        <div class="container">
+          <div class="contact-wrapper">
+            <h2 class="section-title">CONTACT US</h2>
+            <div class="line">
+            </div>
+            <form>
+              <fieldset>
+                <legend></legend>
+                <p>NAME</p>
+                <input type="text">
+                <p>TITLLE</p>
+                <input type="text">
+                <p>MESSAGE</p>
+                <textarea rows="5" cols="20"></textarea>
+              </fieldset>
+              <button type="submit">SUBMIT</button>
+            </form>
+          </div>
+        </div>
       </section>
     </div>
+
+    <footer>
+      <div class="container">
+        <p>©2021 EL TIGRE inc.</p>
+      </div>
+    </footer>
 
     <script id="template-product" type="text/x-handlebars-template">
       <div class="products-wrapper">
@@ -67,64 +107,6 @@
         </div>
       </div>
     </script>
-        
-    <section class="about">
-      <div class="container">
-        <div class="about-wrapper">
-          <h2 class="section-title">ABOUT US</h2>
-          <div class="line">
-          </div>
-          <div class="about-tekst">
-            <p>
-              Who are we? Just a bunch of friends with<br>a love for a good coffee and desire to create something new, something original<br> <br>Our coffees reflect us - young, wild and free.<br>We are on the journey of new tastes...
-            </p>
-          </div>
-          <div class="about-join">
-            <p>Join us!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <div class="container">
-        <div class="contact-wrapper">
-          <h2 class="section-title">CONTACT US</h2>
-          <div class="line">
-          </div>
-          <form>
-            <fieldset>
-              <legend></legend>
-              <p>NAME</p>
-              <input type="text">
-              <p>TITLLE</p>
-              <input type="text">
-              <p>MESSAGE</p>
-              <textarea rows="5" cols="20"></textarea>
-            </fieldset>
-            <button type="submit">SUBMIT</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <p>©2021 EL TIGRE inc.</p>
-      </div>
-    </footer>
-
-    <div id="template-home" type="text/x-handlebars-template">
-
-    </div>
-
-    <div id="template-products" type="text/x-handlebars-template">
-
-    </div>
-
-    <div id="template-contact" type="text/x-handlebars-template">
-
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
     <script src="js/script.js" type="module"></script>

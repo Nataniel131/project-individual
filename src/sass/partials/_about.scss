@@ -1,10 +1,10 @@
-.about {
+#about {
   background-image: url('../images/about-us.jpg');
   background-size: cover;
   position: relative;
 }
 
-.about::before { 
+#about::before { 
   content: "";
   position: absolute;
   top: 0;

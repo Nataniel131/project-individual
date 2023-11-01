@@ -32,46 +32,42 @@
           </div>
           <div class="main-discovery">
             <p>DISCOVER</p>
-            <a href="#"><i class="icon-arrow"></i></a>
+            <i class="icon-arrow"></i>
           </div>
         </div>
       </div>
     </header>
 
-    <section class="products">
-      <div class="container">
-        <h2 class="section-title">PRODUCTS</h2>
-        <div class="line">
+    <div id="pages">
+      <section id="home">
+        <div class="home-page container"></div>
+      </section>
+      <section id="products">
+        <div class="products-page container">
+          <h2 class="section-title">PRODUCTS</h2>
+          <div class="line"></div>
+          <div class="products-list"></div>
         </div>
-        <div class="products-wrapper">
-          <div class="product-box tekst-box">
-            <h3 class="product-title">01. LA LAGARTIJA</h3>
-            <div class="product-line"><div class="line-box"></div></div>
-            <p class="product-tekst">Mysterious and treacherous... The best choice for the start of your jurney! It will provide yot a rich delicious flavor.</p>
-            <p class="product-rating">ROASTING: <span class="text-gold">5/10</span><br>INTENSITY: <span class="text-gold">6/10</span></p>
-          </div>
-          <div class="product-box image-box first-product">
-          </div>
-          <div class="product-box image-box second-product">
-          </div>
-          <div class="product-box tekst-box">
-            <h3 class="product-title">02. EL TIGRE</h3>
-            <div class="product-line"><div class="line-box"></div></div>
-            <p class="product-tekst">Really dark coffee, only for the real gourments. It has bitter flavor of grapefruits and is mixed with a little bit of peanuts with caramel.</p>
-            <p class="product-rating">ROASTING: <span class="text-gold">8/10</span><br>INTENSITY: <span class="text-gold">9/10</span></p>
-          </div>
-          <div class="product-box tekst-box">
-            <h3 class="product-title">03. LA CUCARACHA</h3>
-            <div class="product-line"><div class="line-box"></div></div>
-            <p class="product-tekst">Sweet and intense with a big amount of different flavors. Caramel, grapes, strwaberry, you name it! It's great choice for warm summer days.</p>
-            <p class="product-rating">ROASTING: <span class="text-gold">3/10</span><br>INTENSITY: <span class="text-gold">7/10</span></p>
-          </div>
-          <div class="product-box image-box third-product">
-          </div>
+      </section>
+      <section id="contact">
+        <div class="contact-page container"></div>
+      </section>
+    </div>
+
+    <script id="template-product" type="text/x-handlebars-template">
+      <div class="products-wrapper">
+        <div class="product-box tekst-box">
+          <h3 class="product-title">{{ title }}</h3>
+          <div class="product-line"><div class="line-box"></div></div>
+          <p class="product-tekst"> {{ tekst }}</p>
+          <p class="product-rating">ROASTING: <span class="text-gold">{{ roasting }}/10</span><br>INTENSITY: <span class="text-gold">{{ intensity }}/10</span></p>
+        </div>
+        <div class="product-box image-box">
+          <img src="{{ image.imageSource }}" alt="{{ image.imageAlt }}"> 
         </div>
       </div>
-    </section>
-
+    </script>
+        
     <section class="about">
       <div class="container">
         <div class="about-wrapper">
@@ -98,6 +94,7 @@
           </div>
           <form>
             <fieldset>
+              <legend></legend>
               <p>NAME</p>
               <input type="text">
               <p>TITLLE</p>
@@ -117,18 +114,6 @@
       </div>
     </footer>
 
-    <div id="pages">
-      <section id="home">
-        <div class="home-page container"></div>
-      </section>
-      <section id="products">
-        <div class="products-page container"></div>
-      </section>
-      <section id="contact">
-        <div class="contact-page container"></div>
-      </section>
-    </div>
-
     <div id="template-home" type="text/x-handlebars-template">
 
     </div>
@@ -140,5 +125,8 @@
     <div id="template-contact" type="text/x-handlebars-template">
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="js/script.js" type="module"></script>
   </body>
 </html>

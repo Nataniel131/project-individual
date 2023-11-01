@@ -1,11 +1,15 @@
-.products-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.products-list {
   margin: 50px auto 10px;
   width: 70%;
   height: 100%;
+  :nth-child(even) {
+    flex-direction: row-reverse;
+  }
 }
+
+.products-wrapper {
+  display: flex;
+} 
 
 .product-box {
   display: flex;
@@ -56,20 +60,7 @@
   color: $color-gold;
 }
 
-.image-box {
-  content: "";
-  background-size: cover;
-  background-position: center;
-}
-
-.first-product {
-  background-image: url('../images/coffee-1.png');
-}
-
-.second-product {
-  background-image: url('../images/coffee-2.png');
-}
-
-.third-product {
-  background-image: url('../images/coffee-3.png');
+.image-box img {
+  height: auto;
+  width: 100%;
 }

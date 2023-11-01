@@ -1,5 +1,5 @@
 import Products from './Products.js'; 
-import { classNames, select } from './setting.js';
+import { classNames, select, settings } from './setting.js';
 
 const app = {
   initPages: function() {
@@ -33,9 +33,31 @@ const app = {
     }
   },
 
+  initData: function () {
+    const thisApp = this;
+
+    thisApp.data = {};
+
+    const url = settings.db.url + '/' + settings.db.products;
+
+    fetch(url)
+      .then(function(rawResponse) {
+        return rawResponse.json();
+      })
+
+      .then(function(parsedResponse) {
+
+        thisApp.data.products = parsedResponse;
+
+        new Products(thisApp.data.products);
+      });
+  },
+
   init: function() {
-    new Products();
-    app.initPages();
+    const thisApp = this;
+
+    thisApp.initData();
+    thisApp.initPages();
   },
 };
 

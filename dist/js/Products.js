@@ -1,9 +1,9 @@
-import { products } from './data.js';
 import { select, templates } from './setting.js';
 
 class Products {
-  constructor() {
+  constructor(productsData) {
     const thisProduct = this;
+    thisProduct.data = productsData;
 
     thisProduct.getElements();
     thisProduct.renderProducts();
@@ -19,7 +19,7 @@ class Products {
   renderProducts() {
     const thisProduct = this;
 
-    for (const product of products) {
+    for (const product of thisProduct.data) {
       thisProduct.dom.productList.innerHTML += templates.cartProduct(product);
     }
   }

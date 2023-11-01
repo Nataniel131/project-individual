@@ -1,11 +1,12 @@
 import Products from './Products.js'; 
+import { classNames, select } from './setting.js';
 
 const app = {
   initPages: function() {
     const thisApp = this;
 
-    thisApp.pages = document.querySelector('#pages').children;
-    thisApp.navLinks = document.querySelectorAll('.navigation-pages a');
+    thisApp.pages = document.querySelector(select.containerOf.pages).children;
+    thisApp.navLinks = document.querySelectorAll(select.navigation.links);
     
     thisApp.activatePages(thisApp.navLinks[0].getAttribute('href').replace('#', ''));
 
@@ -25,7 +26,10 @@ const app = {
     const thisApp = this;
 
     for (let page of thisApp.pages) {
-      page.classList.toggle('active', page.id == pageId || pageId == 'home' && page.id != 'contact');
+      page.classList.toggle(
+        classNames.active, page.id == pageId || 
+        pageId == classNames.home && page.id != classNames.contact
+      );
     }
   },
 

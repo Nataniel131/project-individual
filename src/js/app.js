@@ -13,6 +13,7 @@ const app = {
     for(let link of thisApp.navLinks) {
       link.addEventListener('click', function(event) {
         const clickedElement = this;
+        
         event.preventDefault();
 
         const id = clickedElement.getAttribute('href').replace('#', '');
@@ -37,7 +38,6 @@ const app = {
     const thisApp = this;
 
     thisApp.data = {};
-
     const url = settings.db.url + '/' + settings.db.products;
 
     fetch(url)
@@ -46,7 +46,6 @@ const app = {
       })
 
       .then(function(parsedResponse) {
-
         thisApp.data.products = parsedResponse;
 
         new Products(thisApp.data.products);

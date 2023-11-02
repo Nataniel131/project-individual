@@ -1,6 +1,7 @@
 #about {
   background-image: url('../images/about-us.jpg');
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -21,20 +22,22 @@
 }
 
 .about-tekst {
-  margin: 75px 300px 50px;
+  margin: 75px auto 50px;
   color: $color-white;
   text-align: left;
   font-style: italic;
   letter-spacing: 1px;
   font-size: 30px;
+  width: 50%;
 }
 
 .about-join {
   color: $color-white;
   text-align: right;
-  margin: 0 300px;
+  margin: 0 auto;
   font-style: italic;
   letter-spacing: 1px;
   font-size: 30px;
   padding-bottom: 50px;
+  width: 50%;
 }

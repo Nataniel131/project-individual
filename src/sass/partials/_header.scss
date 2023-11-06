@@ -83,7 +83,7 @@ header::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 50%;
 }
 
 .main-title {
@@ -148,11 +148,13 @@ header::before {
 }
 
 @media (max-width: 1033px) {
-  .first-line {
+  .first-line, .second-line {
     align-self: center;
   }
-  
-  .second-line {
-    align-self: center;
+}
+
+@media (max-width: 1430px) {
+  .main-page {
+    width: 70%;
   }
 }

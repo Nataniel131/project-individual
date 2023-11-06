@@ -1,19 +1,19 @@
-import Products from './Products.js'; 
-import { classNames, select, settings } from './setting.js';
+import Products from './Products.js';
+import { classNames, select, settings } from './settings.js';
 
 const app = {
-  initPages: function() {
+  initPages: function () {
     const thisApp = this;
 
     thisApp.pages = document.querySelector(select.containerOf.pages).children;
     thisApp.navLinks = document.querySelectorAll(select.navigation.links);
-    
+
     thisApp.activatePages(thisApp.navLinks[0].getAttribute('href').replace('#', ''));
 
-    for(let link of thisApp.navLinks) {
-      link.addEventListener('click', function(event) {
+    for (let link of thisApp.navLinks) {
+      link.addEventListener('click', function (event) {
         const clickedElement = this;
-        
+
         event.preventDefault();
 
         const id = clickedElement.getAttribute('href').replace('#', '');
@@ -23,13 +23,13 @@ const app = {
     }
   },
 
-  activatePages: function(pageId) {
+  activatePages: function (pageId) {
     const thisApp = this;
 
     for (let page of thisApp.pages) {
       page.classList.toggle(
-        classNames.active, page.id == pageId || 
-        pageId == classNames.home && page.id != classNames.contact
+        classNames.active, page.id == pageId ||
+      pageId == classNames.home && page.id != classNames.contact
       );
     }
   },
@@ -41,18 +41,18 @@ const app = {
     const url = settings.db.url + '/' + settings.db.products;
 
     fetch(url)
-      .then(function(rawResponse) {
+      .then(function (rawResponse) {
         return rawResponse.json();
       })
 
-      .then(function(parsedResponse) {
+      .then(function (parsedResponse) {
         thisApp.data.products = parsedResponse;
 
         new Products(thisApp.data.products);
       });
   },
 
-  init: function() {
+  init: function () {
     const thisApp = this;
 
     thisApp.initData();
